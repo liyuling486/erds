@@ -259,7 +259,8 @@
           <home-title type="pro-top">历年投资</home-title>
           <view class="years-investment-content">
             <view class="echarts-content">
-              <my-echars :option="investmentData" :className="'years-investment-echarts'"></my-echars>
+             <!-- <my-echars :option="investmentData" :className="'years-investment-echarts'"></my-echars> -->
+             <years-investment-chart></years-investment-chart>
             </view>
             <view class=""></view>
           </view>
