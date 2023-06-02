@@ -1,0 +1,429 @@
+.home {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f4f8 24%, #f3f4f8 100%) #f4f7ff;
+
+  // border: 1px solid red;
+  .title {
+    &-bg {
+      position: relative;
+      img {
+        width: 100%;
+        object-fit: cover;
+        object-position: 0px -70rpx;
+      }
+    }
+    &-city {
+      font-size: 36rpx;
+      color: #ffffff;
+    }
+    &-content {
+      position: absolute;
+      top: 40rpx;
+      padding-left: 36rpx;
+    }
+  }
+  .todo-wrapper {
+    position: relative;
+    top: -100rpx;
+  }
+  .todo-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, #ffffff 0%, #fafbff 26%, #f4f6ff 100%);
+    border-radius: 36rpx 36rpx 2rpx 2rpx;
+    padding: 30rpx 80rpx;
+    .todo-line {
+      height: 102rpx;
+      border: 2rpx solid #ebedf0;
+    }
+    .num {
+      font-size: 52rpx;
+      color: #034adb;
+    }
+    .title {
+      font-size: 28rpx;
+      color: rgba(0, 0, 0, 0.65);
+    }
+  }
+  &-content {
+    .line {
+      width: 90%;
+      border-top: 2px solid #ebedf0;
+    }
+    .project-overview {
+      &-title {
+        padding-right: 48rpx;
+        width: 100vw;
+        margin-top: 48rpx;
+        /deep/.uni-select {
+          width: 150rpx;
+          margin-left: auto;
+          border: none;
+        }
+      }
+      &-content {
+        display: flex;
+        margin: 0 32rpx;
+        align-items: center;
+        .img {
+          position: relative;
+        }
+        .xmzs-total {
+          display: flex;
+          justify-content: center;
+          position: absolute;
+          flex-direction: column;
+          align-items: center;
+          top: 30rpx;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .xmzs-num {
+          color: #ffffff;
+          font-size: 52rpx;
+        }
+        .xmzs-text {
+          color: #ffffff;
+          font-size: 28rpx;
+        }
+        &-total {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          margin-left: 14rpx;
+          .total-state {
+            margin-left: 16rpx;
+          }
+          .total-bg {
+            padding-left: 16rpx;
+            padding-right: 34rpx;
+            color: rgba(0, 0, 0, 0.65);
+            // border: 1px solid red;
+            height: 100rpx;
+            background: #ebf1ff;
+            border-radius: 16rpx;
+            &:not(:last-child) {
+              margin-bottom: 16rpx;
+            }
+            .total-par {
+              font-size: 40rpx;
+              color: #034adb;
+              margin-right: 20rpx;
+            }
+          }
+        }
+      }
+    }
+    .government-investment {
+      border-radius: 20rpx;
+      background-color: #ffffff;
+      margin: 0 32rpx;
+      padding-bottom: 20rpx;
+      &-left {
+        position: relative;
+      }
+      .alltzouzi {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        &-num {
+          font-size: 52rpx;
+        }
+        &-text {
+          color: #8c8c8c;
+        }
+      }
+      &-bgc {
+        border-radius: 20rpx;
+        padding: 16rpx 70rpx 18rpx;
+        background: linear-gradient(128deg, rgba(123, 167, 255, 0.85) 0%, #619dff 100%);
+      }
+      &-right {
+        color: #ffffff;
+        margin-right: 34rpx;
+
+        .money {
+          font-size: 48rpx;
+          font-weight: 600;
+        }
+        .loding {
+          font-size: 28rpx;
+          font-weight: 500;
+        }
+        &-dataTop {
+          margin-bottom: 18rpx;
+        }
+      }
+      &-data {
+        color: #8c8c8c;
+        font-size: 24rpx;
+        margin: 0 44rpx;
+        .data-btm {
+          margin-bottom: 14rpx;
+        }
+        .circle {
+          &1,
+          &2,
+          &3,
+          &4 {
+            width: 18rpx;
+            height: 18rpx;
+            border-radius: 50%;
+            margin-right: 6rpx;
+          }
+          &1 {
+            background-color: rgb(100, 161, 255);
+          }
+          &2 {
+            background: rgb(251, 117, 91);
+          }
+          &3 {
+            background: rgb(38, 224, 176);
+          }
+          &4 {
+            background: rgb(255, 196, 38);
+          }
+        }
+        .total {
+          margin-left: 26rpx;
+          color: #000;
+          &1 {
+            color: rgb(100, 161, 255);
+          }
+          &2 {
+            color: rgb(251, 117, 91);
+          }
+          &3 {
+            color: rgb(38, 224, 176);
+          }
+          &4 {
+            color: rgb(255, 196, 38);
+          }
+        }
+      }
+    }
+    .analytic-statistics {
+      width: 100%;
+      .distance-r {
+        margin-right: 32rpx;
+        .statistics-checkout {
+          display: flex;
+          background: rgba(0, 0, 0, 0.04);
+          border-radius: 32rpx;
+          color: rgba(0, 0, 0, 0.45);
+          margin-top: 40rpx;
+          height: 64rpx;
+          font-size: 28rpx;
+
+          .tab {
+            height: 64rpx;
+            text-align: center;
+            text-align: center;
+            padding: 12rpx 36rpx;
+          }
+          .active {
+            background: #ffffff;
+            color: #034adb;
+            border-radius: 32rpx;
+          }
+        }
+      }
+      &-content {
+        background-color: #ffffff;
+        margin: 0 32rpx;
+        border-radius: 20rpx;
+        .tab-content {
+          padding: 32rpx;
+        }
+        table {
+          font-size: 28rpx;
+          width: 100%;
+          border-collapse: collapse;
+          thead {
+            tr {
+              text-align: left;
+              background-color: rgb(250, 250, 250);
+            }
+          }
+          thead,
+          tbody {
+            th:nth-child(1),
+            td:nth-child(1) {
+              padding-left: 32rpx;
+            }
+            th:nth-last-child(1),
+            td:nth-last-child(1) {
+              padding-right: 32rpx;
+            }
+          }
+        }
+
+        th:not(:first-child),
+        td:not(:first-child) {
+          border: none;
+          padding: 8px 0;
+          color: rgba(0, 0, 0, 0.65);
+          text-align: right;
+        }
+        th {
+          font-weight: 400;
+          color: rgba(0, 0, 0, 0.85);
+        }
+
+        .even {
+          background-color: rgb(255, 255, 255);
+          border-bottom: 1px solid rgb(255, 255, 255);
+        }
+
+        .odd {
+          background-color: rgb(250, 250, 250);
+          border-bottom: 1px solid rgb(250, 250, 250);
+        }
+
+        .more,
+        .more-close {
+          background-color: rgba(250, 250, 250, 0.6);
+          text-align: center;
+          color: rgba(0, 0, 0, 0.65);
+          td {
+            padding: 8px 0;
+          }
+        }
+        .region {
+          color: #004ce4;
+        }
+      }
+    }
+    .construction-state {
+      width: 100%;
+      &-content {
+        margin: 0 32rpx;
+        border-radius: 20rpx;
+        background: #ffffff linear-gradient(180deg, #d7e3ff 0%, rgba(223, 235, 255, 0) 23%, rgba(216, 231, 255, 0) 25%, rgba(216, 231, 255, 0) 100%);
+        &-1 {
+          padding: 30rpx 60rpx 0;
+
+          width: 100%;
+          .title {
+            color: rgba(0, 0, 0, 0.65);
+            font-size: 32rpx;
+          }
+          .t-num {
+            font-size: 48rpx;
+            color: rgba(0, 0, 0, 0.85);
+            &-j {
+              color: #ffa900;
+            }
+          }
+        }
+        &-2 {
+          padding: 0 28rpx;
+          .shuju {
+            background: #ffffff linear-gradient(180deg, #d7e3ff 0%, rgba(223, 235, 255, 0) 23%, rgba(216, 231, 255, 0) 25%, rgba(216, 231, 255, 0) 100%);
+            border-radius: 16rpx;
+            width: 200rpx;
+            padding-top: 24rpx;
+            padding-bottom: 18rpx;
+            img {
+              width: 65rpx;
+            }
+            &1 {
+              margin-top: 8rpx;
+              font-size: 24rpx;
+              color: rgba(0, 0, 0, 0.65);
+            }
+            &2 {
+              margin-top: 20rpx;
+              line-height: 68rpx;
+              color: rgba(0, 0, 0, 0.85);
+              font-size: 40rpx;
+            }
+            &3 {
+              font-size: 24rpx;
+              color: #ffa900;
+            }
+          }
+        }
+        &-3 {
+          .uzxu {
+            margin-top: 36rpx;
+            position: relative;
+            margin-left: 38rpx;
+            &-t {
+              font-size: 32rpx;
+              color: #333333;
+              font-weight: 400;
+              position: absolute;
+            }
+            &-data {
+              margin: 32rpx;
+              border-radius: 8rpx;
+              border: 2px solid #f9f9f9;
+              table {
+                font-size: 28rpx;
+                width: 100%;
+                border-collapse: collapse;
+                thead {
+                  tr {
+                    text-align: left;
+                    background-color: rgb(250, 250, 250);
+                  }
+                }
+                thead,
+                tbody {
+                  th:nth-child(1),
+                  td:nth-child(1) {
+                    padding-left: 32rpx;
+                  }
+                  th:nth-last-child(1),
+                  td:nth-last-child(1) {
+                    padding-right: 32rpx;
+                  }
+                }
+              }
+
+              th,
+              td {
+                border: none;
+                padding: 8px 0;
+                color: rgba(0, 0, 0, 0.65);
+                text-align: center;
+              }
+              th {
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.85);
+              }
+
+              .even {
+                background-color: rgb(255, 255, 255);
+                border-bottom: 1px solid rgb(255, 255, 255);
+              }
+
+              .odd {
+                background-color: rgb(250, 250, 250);
+                border-bottom: 1px solid rgb(250, 250, 250);
+              }
+
+              .more,
+              .more-close {
+                background-color: rgba(250, 250, 250, 0.6);
+                text-align: center;
+                color: rgba(0, 0, 0, 0.65);
+                td {
+                  padding: 8px 0;
+                }
+              }
+              .region {
+                color: #333333;
+              }
+            }
+          }
+        }
+      }
+    }
+    .years-investment {
+      width: 100%;
+    }
+  }
+}

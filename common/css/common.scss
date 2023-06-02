@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+a {
+  color: #58a6ff;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+ol,
+ul {
+  list-style: none;
+}
+img {
+  pointer-events: none;
+  vertical-align: top;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  all: unset;
+}
+uni-button:after {
+  border: none;
+}
+.f {
+  display: flex;
+}
+.ai-fe {
+  display: flex;
+  align-items: flex-end;
+}
+.ja-c-d {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.j-c-w {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.j-d {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.j-a-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.j-c {
+  display: flex;
+  justify-content: center;
+}
+.j-sb-a-c {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.j-sb-a-c-w {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ac {
+  display: flex;
+  align-items: center;
+}
+.j-sb {
+  display: flex;
+  justify-content: space-between;
+}
+.j-sb-ai-s {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+/deep/.uni-page-head {
+  border-bottom: 1px solid rgb(3, 74, 219);
+}
+
+.title-head {
+  margin-top: 30rpx;
+  margin-bottom: 70rpx;
+  width: 480rpx;
+}
