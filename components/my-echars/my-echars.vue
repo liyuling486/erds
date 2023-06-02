@@ -3,7 +3,6 @@
 </template>
 
 <script>
-window.wx = undefined
 import * as echarts from 'echarts';
 
 export default {
@@ -25,7 +24,12 @@ export default {
     initChart() {
       const chartDom = this.$refs.chartRef;
       const myChart = echarts.init(chartDom);
+      myChart.on('click', this.handleClick);
       myChart.setOption(this.option);
+    },
+    handleClick(params) {
+      // 处理点击事件的逻辑
+      console.log('Clicked:', params);
     }
   }
 };

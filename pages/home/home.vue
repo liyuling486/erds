@@ -270,7 +270,6 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -334,8 +333,8 @@ export default {
           },
           itemWidth: 12,
           itemHeight: 12,
-          padding: [30, 0, 0, 0],
-          top: '-20rpx'
+          padding: [30, 0, 0, 0]
+          // top: -20
         },
         xAxis: {
           type: 'value',
@@ -345,7 +344,7 @@ export default {
             fontSize: '24rpx',
             color: '#CBCBCB'
           },
-          
+
           splitLine: {
             lineStyle: {
               color: '#D9D9D9',
@@ -363,13 +362,13 @@ export default {
           axisLine: {
             lineStyle: {
               width: 2,
-              color: '#D9D9D9',
+              color: '#D9D9D9'
             }
           },
           axisLabel: {
             fontSize: '24rpx',
             color: '#CBCBCB'
-          },
+          }
         },
         series: [
           {
@@ -384,7 +383,7 @@ export default {
             },
             itemStyle: {
               color: '#7291F8'
-            }
+            },
           },
           {
             name: '实际投资',
