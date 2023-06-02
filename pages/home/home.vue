@@ -257,10 +257,11 @@
         </view>
         <view class="years-investment">
           <home-title type="pro-top">历年投资</home-title>
-          <view class="">
-            
-            <my-echars :option="investmentData" :className="'years-investment-echarts'"></my-echars>
-             <my-echars :option="chartOption" :className="'government-investment-echarts'"></my-echars>
+          <view class="years-investment-content">
+            <view class="echarts-content">
+              <my-echars :option="investmentData" :className="'years-investment-echarts'"></my-echars>
+            </view>
+            <view class="">1111</view>
           </view>
         </view>
       </view>
@@ -322,14 +323,14 @@ export default {
           left: 'left',
           icon: 'rect',
           textStyle: {
-            fontSize: 28,
+            fontSize: '24rpx',
             color: 'rgba(0,0,0,0.45)',
-            padding: [0, 0, 0, 10]
+            padding: [0, 0, 0, 5]
           },
-          itemWidth: 28,
-          itemHeight: 28,
-          padding: [0, 0, 0, 30],
-          itemGap: 40
+          itemWidth: 12,
+          itemHeight: 12,
+          padding: [30, 0, 0, 0],
+          itemGap: 8
         },
         xAxis: {
           type: 'value',
@@ -341,11 +342,12 @@ export default {
         yAxis: {
           type: 'category',
           data: ['2023', '2022', '2021', '2020', '2019'],
+          boundaryGap: [0, 0.1],
           axisTick: {
             show: false
           },
           axisLabel: {
-            fontSize: '30px',
+            fontSize: '24rpx',
             color: 'rgba(0,0,0,0.45)'
           },
           axisLine: {
@@ -360,7 +362,37 @@ export default {
               width: 2
             }
           }
-        }
+        },
+        series: [
+          {
+            name: '计划投资',
+            type: 'bar',
+            data: [470, 640, 475, 320, 380],
+            label: {
+              show: true,
+              position: 'right', // 设置标签位置为柱状图内部
+              color: '#595959',
+              fontSize: '24rpx'
+            },
+            itemStyle: {
+              color: '#7291F8'
+            }
+          },
+          {
+            name: '实际投资',
+            type: 'bar',
+            data: [430, 530, 470, 330, 290],
+            label: {
+              show: true,
+              position: 'right',
+              color: '#595959',
+              fontSize: '24rpx'
+            },
+            itemStyle: {
+              color: '#73DEB3'
+            }
+          }
+        ]
       }
     };
   },
@@ -402,7 +434,7 @@ export default {
   height: 400rpx;
 }
 .years-investment-echarts {
-  width: 700rpx;
+  width: 100%;
   height: 500rpx;
 }
 .pro-top {

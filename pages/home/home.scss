@@ -424,6 +424,14 @@
     }
     .years-investment {
       width: 100%;
+      &-content {
+        margin: 0 32rpx;
+        border-radius: 20rpx;
+        background: #fff;
+        .echarts-content {
+          padding: 0 32rpx;
+        }
+      }
     }
   }
 }
