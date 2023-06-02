@@ -3,6 +3,7 @@
 </template>
 
 <script>
+window.wx = undefined
 import * as echarts from 'echarts';
 
 export default {

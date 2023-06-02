@@ -261,7 +261,7 @@
             <view class="echarts-content">
               <my-echars :option="investmentData" :className="'years-investment-echarts'"></my-echars>
             </view>
-            <view class="">1111</view>
+            <view class=""></view>
           </view>
         </view>
       </view>
@@ -270,6 +270,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -319,6 +320,10 @@ export default {
             type: 'shadow'
           }
         },
+        grid: {
+          bottom: '0rpx',
+          top: '30rpx'
+        },
         legend: {
           left: 'left',
           icon: 'rect',
@@ -330,13 +335,22 @@ export default {
           itemWidth: 12,
           itemHeight: 12,
           padding: [30, 0, 0, 0],
-          itemGap: 8
+          top: '-20rpx'
         },
         xAxis: {
           type: 'value',
           boundaryGap: [0, 0.01],
           axisLabel: {
-            show: false
+            show: false,
+            fontSize: '24rpx',
+            color: '#CBCBCB'
+          },
+          
+          splitLine: {
+            lineStyle: {
+              color: '#D9D9D9',
+              width: 2
+            }
           }
         },
         yAxis: {
@@ -346,22 +360,16 @@ export default {
           axisTick: {
             show: false
           },
-          axisLabel: {
-            fontSize: '24rpx',
-            color: 'rgba(0,0,0,0.45)'
-          },
           axisLine: {
             lineStyle: {
-              color: 'rgba(0,0,0,0.1)',
-              width: 2
+              width: 2,
+              color: '#D9D9D9',
             }
           },
-          splitLine: {
-            lineStyle: {
-              color: 'rgba(0,0,0,0.45)',
-              width: 2
-            }
-          }
+          axisLabel: {
+            fontSize: '24rpx',
+            color: '#CBCBCB'
+          },
         },
         series: [
           {
