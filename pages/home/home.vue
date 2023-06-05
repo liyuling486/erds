@@ -242,7 +242,7 @@
                   </thead>
                   <tbody>
                     <tr v-for="(item, index) in uzxuData" :key="index" :class="index % 2 === 0 ? 'even' : 'odd'">
-                      <td class="region">{{ item }}</td>
+                      <td>{{ item }}</td>
                       <td>{{ Math.floor(Math.random() * 100) }}</td>
                       <td>{{ Math.floor(Math.random() * 100) }}</td>
                       <td>{{ Math.floor(Math.random() * 100) }}</td>
@@ -259,8 +259,15 @@
           <home-title type="pro-top">历年投资</home-title>
           <view class="years-investment-content">
             <view class="echarts-content">
-             <!-- <my-echars :option="investmentData" :className="'years-investment-echarts'"></my-echars> -->
-             <years-investment-chart></years-investment-chart>
+              <!-- <years-investment-chart @updateYear="handleUpdateYear"></years-investment-chart> -->
+              <my-echars @click="handleChildClick" :option="investmentData" :className="'years-investment-echarts'"></my-echars>
+            </view>
+            <view class="echarts-content-data f">
+              <view class="echarts-content-data1">{{ clickedData }}年</view>
+              <view class="echarts-content-data2 f">
+                <view class="echarts-content-data2-1">项目(个): 67</view>
+                <view class="echarts-content-data2-2">完成率: 92%</view>
+              </view>
             </view>
             <view class=""></view>
           </view>
@@ -278,6 +285,7 @@ export default {
       todoPreliminary: 9,
       todoReview: 4,
       value: 0,
+      clickedData: null,
       tabs: [
         { id: 'a', name: '地区' },
         { id: 'b', name: '部门' }
@@ -315,6 +323,7 @@ export default {
       },
       investmentData: {
         tooltip: {
+          alwaysShowContent: true,
           trigger: 'axis',
           axisPointer: {
             type: 'shadow'
@@ -322,7 +331,7 @@ export default {
         },
         grid: {
           bottom: '0rpx',
-          top: '30rpx'
+          top: '50rpx'
         },
         legend: {
           left: 'left',
@@ -335,7 +344,7 @@ export default {
           itemWidth: 12,
           itemHeight: 12,
           padding: [30, 0, 0, 0]
-          // top: -20
+          // top: 0
         },
         xAxis: {
           type: 'value',
@@ -384,7 +393,7 @@ export default {
             },
             itemStyle: {
               color: '#7291F8'
-            },
+            }
           },
           {
             name: '实际投资',
@@ -430,6 +439,9 @@ export default {
         });
       }
       return dummyData;
+    },
+    handleChildClick(data) {
+      this.clickedData = data;
     }
   }
 };

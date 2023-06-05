@@ -1,30 +1,33 @@
 <template>
   <view class="charts-box">
-    <qiun-data-charts type="bar" :opts="opts" :chartData="chartData" />
+    <qiun-data-charts type="bar" :opts="opts" :chartData="chartData" @tap="handleChartTouch" />
   </view>
 </template>
 
 <script>
-import uCharts from '@/js_sdk/u-charts.js';
-var uChartsInstance = {};
 export default {
   data() {
     return {
       chartData: {},
-      //您可以通过修改 config-ucharts.js 文件中下标为 ['bar'] 的节点来配置全局默认参数，如都是默认参数，此处可以不传 opts 。实际应用过程中 opts 只需传入与全局默认参数中不一致的【某一个属性】即可实现同类型的图表显示不同的样式，达到页面简洁的需求。
       opts: {
-        color: ['#1890FF', '#91CB74', '#FAC858', '#EE6666', '#73C0DE', '#3CA272', '#FC8452', '#9A60B4', '#ea7ccc'],
+        color: ['#7291F8', '#73DEB3', '#FAC858', '#EE6666', '#73C0DE', '#3CA272', '#FC8452', '#9A60B4', '#ea7ccc'],
         padding: [15, 30, 0, 5],
         enableScroll: false,
-        legend: {},
-        xAxis: {
-          boundaryGap: 'justify',
-          disableGrid: false,
-          min: 0,
-          axisLine: false,
-          max: 40
+        legend: {
+          position: 'top',
+          float: 'left'
         },
-        yAxis: {},
+        xAxis: {
+          disableGrid: false,
+          axisLine: false,
+          splitNumber: 7,
+          gridColor: '#D9D9D9',
+          disabled: true
+        },
+        yAxis: {
+          disabledGrid: false
+        },
+        title: { name: 'xxx' },
         extra: {
           bar: {
             type: 'group',
@@ -33,17 +36,20 @@ export default {
             meterFillColor: '#FFFFFF',
             activeBgColor: '#000000',
             activeBgOpacity: 0.08,
-            linearType: 'custom',
-            barBorderCircle: true,
+            linearType: 'none',
             seriesGap: 2,
-            categoryGap: 2
+            categoryGap: 8
           }
         }
       }
     };
   },
-  onReady() {
+  mounted() {
     this.getServerData();
+  },
+  updated() {
+    console.log(this.chartData.categories[0]);
+    console.log(this);
   },
   methods: {
     getServerData() {
@@ -51,20 +57,30 @@ export default {
       setTimeout(() => {
         //模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接
         let res = {
-          categories: ['2018', '2019', '2020', '2021', '2022', '2023'],
+          categories: ['2019', '2020', '2021', '2022', '2023'],
           series: [
             {
-              name: '目标值',
-              data: [35, 36, 31, 33, 13, 34]
+              name: '计划投资',
+              data: [380, 320, 475, 640, 470]
             },
             {
-              name: '完成量',
-              data: [18, 27, 21, 24, 6, 28]
+              name: '实际投资',
+              data: [290, 330, 470, 530, 430]
             }
           ]
         };
         this.chartData = JSON.parse(JSON.stringify(res));
       }, 500);
+    }
+  },
+  handleChartTouch(e) {
+    const chartInstance = e.detail.chartInstance;
+    const { data } = chartInstance.getChartData(e);
+
+    if (data && data.length > 0) {
+      const dataIndex = data[0].dataIndex;
+      const year = this.chartData.categories[dataIndex];
+      this.$emit('updateYear', year);
     }
   }
 };

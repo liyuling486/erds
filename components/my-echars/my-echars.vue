@@ -7,6 +7,11 @@ import * as echarts from 'echarts';
 
 export default {
   name: 'my-echars',
+  data() {
+    return {
+      clickedData: null
+    };
+  },
   props: {
     option: {
       type: Object,
@@ -19,17 +24,24 @@ export default {
   },
   mounted() {
     this.initChart();
+    console.log('1', this);
   },
   methods: {
     initChart() {
       const chartDom = this.$refs.chartRef;
       const myChart = echarts.init(chartDom);
-      myChart.on('click', this.handleClick);
       myChart.setOption(this.option);
+      myChart.on('click', this.handleClick);
+      myChart.on('globalout', this.handleGlobalOut);
     },
     handleClick(params) {
-      // 处理点击事件的逻辑
-      console.log('Clicked:', params);
+      const { dataIndex, seriesIndex } = params;
+      const yAxisData = this.option.yAxis.data;
+      this.clickedData = yAxisData[dataIndex];
+      this.$emit('click', this.clickedData);
+    },
+    handleGlobalOut() {
+      this.clickedData = null;
     }
   }
 };
