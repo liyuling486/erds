@@ -54,7 +54,7 @@
   &-title {
     border-bottom: 2rpx solid #ebedf0;
     &-left {
-      font-weight: 400;
+      font-weight: normal;
       color: #333333;
       font-size: 32rpx;
       padding: 22rpx 0rpx 22rpx 0;
@@ -64,13 +64,13 @@
       border-radius: 0rpx 16rpx 0rpx 16rpx;
       font-size: 22rpx;
       color: #fff;
-      font-weight: 400;
+      font-weight: normal;
       padding: 12rpx 20rpx 12rpx 16rpx;
     }
   }
   &-content {
     color: rgba(0, 0, 0, 0.65);
-    font-weight: 400;
+    font-weight: normal;
     font-size: 28rpx;
     padding: 16rpx 0 10rpx 0;
     border-bottom: 2rpx solid #ebedf0;
@@ -83,7 +83,7 @@
       // justify-content: space-between;
     }
     &-btm {
-      font-weight: 400;
+      font-weight: normal;
       font-size: 28rpx;
       padding-top: 10rpx;
       padding-bottom: 20rpx;
