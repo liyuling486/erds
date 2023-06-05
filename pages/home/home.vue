@@ -284,7 +284,7 @@ export default {
       todoPreliminary: 9,
       todoReview: 4,
       value: 0,
-      clickedData: null,
+      clickedData: '2023',
       tabs: [
         { id: 'a', name: '地区' },
         { id: 'b', name: '部门' }
