@@ -152,7 +152,7 @@
         }
         .loding {
           font-size: 28rpx;
-          font-weight: 500;
+          font-weight: bold;
         }
         &-dataTop {
           margin-bottom: 18rpx;
@@ -175,10 +175,9 @@
             &:last-child {
               margin-left: 10rpx;
             }
-            &:nth-child(2n+1){
+            &:nth-child(2n + 1) {
               flex: 1;
             }
-          
           }
         }
         .circle {
@@ -286,7 +285,7 @@
           text-align: right;
         }
         th {
-          font-weight: 400;
+          font-weight: normal;
           color: rgba(0, 0, 0, 0.85);
         }
 
@@ -372,7 +371,7 @@
             &-t {
               font-size: 32rpx;
               color: #333333;
-              font-weight: 400;
+              font-weight: normal;
               position: absolute;
             }
             &-data {
@@ -386,7 +385,7 @@
                 border-collapse: collapse;
                 thead {
                   tr {
-                    font-weight: 400;
+                    font-weight: normal;
                     text-align: left;
                     color: rgba(0, 0, 0, 0.85);
                     background-color: rgb(250, 250, 250);
@@ -403,7 +402,7 @@
                     padding-right: 32rpx;
                   }
                   tr:first-child td:not(:first-child) {
-                    font-weight: 500;
+                    font-weight: bold;
                   }
                 }
               }
@@ -412,16 +411,16 @@
               td {
                 border: none;
                 padding: 8px 0;
-                font-weight: 400;
+                font-weight: normal;
                 color: rgba(0, 0, 0, 0.65);
                 text-align: center;
                 &:first-child {
-                  font-weight: 400;
+                  font-weight: normal;
                   color: #333333;
                 }
               }
               th {
-                font-weight: 400;
+                font-weight: normal;
                 color: rgba(0, 0, 0, 0.85);
               }
 
