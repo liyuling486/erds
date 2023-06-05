@@ -30,7 +30,12 @@
         <view class="project-overview">
           <view class="project-overview-title j-sb-a-c">
             <home-title>项目总览</home-title>
-            <uni-data-select v-model="value" :localdata="range" @change="change" :clear="false"></uni-data-select>
+            <picker mode="date" :value="date" :start="startDate" :end="endDate" @change="bindDateChange" fields="year">
+              <view class="uni-input">
+                {{ date }}
+                <uni-icons type="bottom" size="28rpx"></uni-icons>
+              </view>
+            </picker>
           </view>
           <view class="project-overview-content">
             <view class="img">
@@ -95,28 +100,44 @@
           </view>
           <view class="government-investment-data j-sb-a-c-w">
             <view class="ac data-btm">
-              <view class="circle1"></view>
-              <view class="">中央投资</view>
-              <view class="total">45亿</view>
-              <view class="total1">(58.5%)</view>
+              <view class="">
+                <view class="circle1"></view>
+                <view class="">中央投资</view>
+              </view>
+              <view class="x">
+                <view class="total">45亿</view>
+                <view class="total1">(58.5%)</view>
+              </view>
             </view>
             <view class="ac data-btm">
-              <view class="circle2"></view>
-              <view class="">市级投资</view>
-              <view class="total">45亿</view>
-              <view class="total2">(58.5%)</view>
+              <view class="">
+                <view class="circle2"></view>
+                <view class="">市级投资</view>
+              </view>
+              <view class="">
+                <view class="total">45亿</view>
+                <view class="total2">(58.5%)</view>
+              </view>
             </view>
             <view class="ac data-btm">
-              <view class="circle3"></view>
-              <view class="">省级投资</view>
-              <view class="total">45亿</view>
-              <view class="total3">(58.5%)</view>
+              <view class="">
+                <view class="circle3"></view>
+                <view class="">省级投资</view>
+              </view>
+              <view class="x">
+                <view class="total">45亿</view>
+                <view class="total3">(58.5%)</view>
+              </view>
             </view>
             <view class="ac data-btm">
-              <view class="circle4"></view>
-              <view class="">县级投资</view>
-              <view class="total">45亿</view>
-              <view class="total4">(58.5%)</view>
+              <view class="">
+                <view class="circle4"></view>
+                <view class="">县级投资</view>
+              </view>
+              <view class="">
+                <view class="total">45亿</view>
+                <view class="total4">(58.5%)</view>
+              </view>
             </view>
           </view>
         </view>
@@ -279,12 +300,16 @@
 <script>
 export default {
   data() {
+    const currentDate = this.getDate({
+      format: true
+    });
     return {
       todoTotal: 13,
       todoPreliminary: 9,
       todoReview: 4,
       value: 0,
       clickedData: '2023',
+      date: currentDate,
       tabs: [
         { id: 'a', name: '地区' },
         { id: 'b', name: '部门' }
@@ -415,6 +440,12 @@ export default {
   computed: {
     visibleData() {
       return !this.showMore ? this.tableData.concat(this.generateDummyData()) : this.tableData.slice(0, 6);
+    },
+    startDate() {
+      return this.getDate('start');
+    },
+    endDate() {
+      return this.getDate('end');
     }
   },
   methods: {
@@ -441,6 +472,21 @@ export default {
     },
     handleChildClick(data) {
       this.clickedData = data;
+    },
+    bindDateChange(e) {
+      this.date = e.detail.value;
+    },
+    getDate(type) {
+      const date = new Date();
+      let year = date.getFullYear();
+
+      if (type === 'start') {
+        year = year - 60;
+      } else if (type === 'end') {
+        year = year + 2;
+      }
+
+      return `${year}`;
     }
   }
 };

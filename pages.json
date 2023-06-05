@@ -50,7 +50,8 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "鄂尔多斯市",
     "navigationBarBackgroundColor": "RGB(3, 74, 219)",
-    "backgroundColor": "RGB(3, 74, 219)"
+    "backgroundColor": "RGB(3, 74, 219)",
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "borderStyle": "#f0f0f0",
