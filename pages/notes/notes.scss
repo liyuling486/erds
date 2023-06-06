@@ -4,12 +4,15 @@
 .header-sel {
   &-bgimg {
     position: relative;
+    img {
+      width: 100%;
+    }
   }
   &-title {
     position: absolute;
     top: 0;
-    margin-left: 68rpx;
-    margin-top: 14rpx;
+    margin-left: 70rpx;
+    margin-top: 102rpx;
     font-size: 36rpx;
     color: #ffffff;
     font-weight: bold;
@@ -44,6 +47,7 @@
     padding-top: 70rpx;
     padding-left: 32rpx;
     padding-right: 32rpx;
+    padding-bottom: 15rpx;
     &-title {
       display: flex;
       flex-flow: column wrap;
@@ -85,6 +89,10 @@
           background: linear-gradient(0deg, rgba(255, 187, 208, 1) 0%, rgba(220, 80, 255, 1) 100%);
         }
       }
+    }
+    .showB,
+    .showC {
+      height: 800px;
     }
   }
   &-essay {

@@ -34,9 +34,61 @@
               </view>
             </view>
           </view>
+
+          <view class="notes-content-essay">
+            <view class="notes-content-essay-title">组织召开学东弄通坐视重要讲话精神研讨会</view>
+            <view class="notes-content-essay-content">组织召开学东弄通坐视重要讲话精神研讨会组织召开学东弄通坐视重要讲话精神研讨会</view>
+            <view class="notes-content-essay-bottom j-sb-a-c">
+              <view class="">新闻</view>
+              <view class="j-sb-a-c">
+                <view class="">2022-09-24</view>
+                <view class="">浏览：208</view>
+              </view>
+            </view>
+          </view>
+
+          <view class="notes-content-essay">
+            <view class="notes-content-essay-title">组织召开学东弄通坐视重要讲话精神研讨会</view>
+            <view class="notes-content-essay-content">组织召开学东弄通坐视重要讲话精神研讨会组织召开学东弄通坐视重要讲话精神研讨会</view>
+            <view class="notes-content-essay-bottom j-sb-a-c">
+              <view class="">新闻</view>
+              <view class="j-sb-a-c">
+                <view class="">2022-09-24</view>
+                <view class="">浏览：208</view>
+              </view>
+            </view>
+          </view>
+
+          <view class="notes-content-essay">
+            <view class="notes-content-essay-title">组织召开学东弄通坐视重要讲话精神研讨会</view>
+            <view class="notes-content-essay-content">组织召开学东弄通坐视重要讲话精神研讨会组织召开学东弄通坐视重要讲话精神研讨会</view>
+            <view class="notes-content-essay-bottom j-sb-a-c">
+              <view class="">新闻</view>
+              <view class="j-sb-a-c">
+                <view class="">2022-09-24</view>
+                <view class="">浏览：208</view>
+              </view>
+            </view>
+          </view>
+
+          <view class="notes-content-essay">
+            <view class="notes-content-essay-title">组织召开学东弄通坐视重要讲话精神研讨会</view>
+            <view class="notes-content-essay-content">组织召开学东弄通坐视重要讲话精神研讨会组织召开学东弄通坐视重要讲话精神研讨会</view>
+            <view class="notes-content-essay-bottom j-sb-a-c">
+              <view class="">新闻</view>
+              <view class="j-sb-a-c">
+                <view class="">2022-09-24</view>
+                <view class="">浏览：208</view>
+              </view>
+            </view>
+          </view>
         </view>
-        <view v-else-if="activeTab === 'b'">b</view>
-        <view v-else-if="activeTab === 'c'">c</view>
+        <view v-else-if="activeTab === 'b'">
+          <view class="showB">b</view>
+        </view>
+        <view v-else-if="activeTab === 'c'">
+          <view class="showC">c</view>
+        </view>
       </view>
     </view>
   </view>

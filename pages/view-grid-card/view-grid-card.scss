@@ -1,5 +1,6 @@
 .view-grid-card {
   background: linear-gradient(180deg, #ffffff 0%, #f3f4f8 24%, #f3f4f8 100%) #f4f7ff;
+  padding-bottom: 5rpx;
 }
 .header-sel {
   /deep/.uni-select {
@@ -13,7 +14,7 @@
     font-size: 36rpx;
   }
   /deep/.uni-icons {
-    color: #ffffff !important;
+    // color: #ffffff !important;
   }
   /deep/.uni-searchbar {
     // border: 1px solid #eee;
@@ -33,12 +34,18 @@
   }
   &-bgimg {
     position: relative;
+    img {
+      width: 100%;
+    }
   }
   &-content {
     position: absolute;
     top: 0;
     margin-left: 68rpx;
-    margin-top: 14rpx;
+    margin-top: 102rpx;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 36rpx;
   }
   &-search {
     position: relative;
@@ -46,7 +53,7 @@
   }
 }
 .content-car {
-  margin: 0 32rpx;
+  margin: 0 32rpx 40rpx;
   padding-left: 32rpx;
   background: #fff;
   border-radius: 16rpx;
@@ -91,7 +98,7 @@
       &-l {
         color: rgba(0, 0, 0, 0.65);
         padding-top: 12rpx;
-        .shoucan{
+        .shoucan {
           margin-left: 32rpx;
         }
         img {

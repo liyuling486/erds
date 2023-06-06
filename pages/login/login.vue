@@ -46,8 +46,8 @@
         <view class="wechat-img"><img src="~@/static/image/weChat-login.png" /></view>
         <view class="wechat-login">微信登录</view>
       </view>
+      <view class="login-bottom"><img src="~@/static/image/login-bottom.png" /></view>
     </view>
-    <view class="login-bottom"><img src="~@/static/image/login-bottom.png" /></view>
   </view>
 </template>
 
