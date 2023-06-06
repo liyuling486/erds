@@ -4,8 +4,8 @@
       <img src="~@/static/image/login-backgriund.png" />
     </view>
     <view class="login-wrapper ja-c-d">
-      <view class="left-title">{{ areas[areasIndex] }}</view>
-      <er-title :projectCity="areas[areasIndex]"></er-title>
+      <view class="left-title">{{ areas[areasIndex].city }}-{{ areas[areasIndex].platformCode }}</view>
+      <er-title :projectCity="areas[areasIndex].city"></er-title>
       <view class="login-button">
         <view class="login-button-img"><img src="~@/static/image/login-button-wraimg.png" /></view>
         <view class="login-button-form">
@@ -15,7 +15,7 @@
             <view class="uni-list">
               <view class="uni-list-cell">
                 <view class="uni-list-cell-db">
-                  <picker @change="bindPickerChange" :value="areasIndex" :range="areas">
+                  <picker @change="bindPickerChange" :value="areasIndex" :range="areas" range-key="city">
                     <view class="uni-input"><view class="sel-checket">切换地区</view></view>
                   </picker>
                 </view>
@@ -42,7 +42,7 @@
           </uni-forms>
         </view>
       </view>
-      <view class="hostUnit">主办单位：{{ areas[areasIndex] }}生态环境厅</view>
+      <view class="hostUnit">主办单位：{{ areas[areasIndex].city }}生态环境厅</view>
       <view class="login-wechat">
         <view class="wechat-img"><img src="~@/static/image/weChat-login.png" /></view>
         <view class="wechat-login">微信登录</view>
@@ -59,7 +59,6 @@ import { getIdentifyingCode } from '@/service/login.js';
 
 export default {
   computed: {
-    ...mapActions('login', 'setAreas') // 使用 mapActions 辅助函数映射 setAreas action
   },
   data() {
     return {
@@ -126,8 +125,9 @@ export default {
         //   }
         // });
         // console.log(cityDataObj)
-        this.setAreas(data.result.map((i) => i.city)); // 调用 setArray action 将数据存储到 Vuex
+        // this.setAreas(data.result.map((i) => i.city)); // 调用 setArray action 将数据存储到 Vuex
         // this.areas = data.result.map((i) => i.city);
+        this.areas = data.result
         // console.log(this.areas);
       })
       .catch((error) => {
@@ -139,6 +139,7 @@ export default {
     });
   },
   methods: {
+    ...mapActions(['setAreas']), // 使用 mapActions 辅助函数映射 setAreas action
     // goToHome() {
     //   uni.switchTab({
     //     url: '/pages/home/home'

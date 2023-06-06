@@ -8,7 +8,8 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 window.wx = {}
 const app = new Vue({
-  ...App
+  ...App,
+  store
 })
 app.$mount()
 // #endif
