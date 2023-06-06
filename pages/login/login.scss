@@ -59,7 +59,13 @@ $allHeight: 112rpx;
         margin-top: 40rpx;
         .form-list {
           padding: 0 40rpx;
-
+          
+          .identifyingCode {
+            width: 200rpx;
+            img {
+              width: 100%;
+            }
+          }
           .no-pws {
             width: 28%;
             font-size: 12px;
